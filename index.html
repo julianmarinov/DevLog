@@ -5,61 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400, 600' rel='stylesheet' type='text/css'>
     <link href='resources/css/style.css' rel='stylesheet' type='text/css'/>
-    <title>WordPress Dev Log</title>
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/46.0.0/ckeditor5.css" crossorigin>
+    <title>DevLog</title>
+    <!-- The following code uses JavaScript to include the header and footer -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Load the header
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("header").innerHTML = data)
+                .catch(error => console.error('Error loading header:', error));
+
+            // Load the footer
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => document.getElementById("footer").innerHTML = data)
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
 </head>
 <body>
+    <div id="header"></div>
+<!--
     <header>
-        <div class="active_project_title">
+        <div class="active-project-title">
             <h1>
-                Active project
+                Active project title
             </h1>
-            <div id="timer">
-                00:12:23
-                <!--
-                Here goes a timer that counts the time from pressing the button "Start" till pressing the button "Stop"
-                -->
-            </div>
             <hr>
         </div>
     </header>
-
-    <div id="sidebar">
-        <section class="single_project">
-            <h2 class="single_project_title">
-                Project name 1
-            </h2>
-            <div class="single_project_controls">
-                <!-- Here we should have quick controls like:
-                Start
-                Pause
-                Stop
-                Information
-                Export
-                Delete
-
-                The controls should appear only on hover -->
-            </div>
-        </section>
-        <div id="controls">
-            <!-- Here we should have quick controls like:
-             New project
-             Settings
-             -->
-        </div>
-    </div>
-
+-->
     <main>
-        <!--
-        Here goeas a rich-text editor
-        -->
+        <aside id="sidebar">
+            <!-- List of projects -->
+            <section id="projects">
+                <div class="active-project">
+                    <h2 class="active-project-title">Project name 1</h2>
+                    <p class="active-project-subtitle">www.myproject.com</p>
+                    <div class="active-project-controls">
+                        <button class="project-btns" aria-label="Information"><img src="resources/images/icons/information.svg" alt="Project Information" width="10" height="10" title="Project Information"></button><br>
+                        <button class="project-btns" aria-label="Edit"><img src="resources/images/icons/settings.svg" alt="Edit Project" width="10" height="10" title="Edit Project"></button><br>
+                        <button class="project-btns" aria-label="Delete"><img src="resources/images/icons/delete.svg" alt="Delete Project" width="10" height="10" title="Delete Project"></button><br>
+                    </div>
+                </div>
+                <div class="inactive-project">
+                    <h2 class="inactive-project-title">Project name 2</h2>
+                    <p class="inactive-project-subtitle">www.myproject.com</p>
+                    <div class="inactive-project-controls">
+                        <button class="project-btns" aria-label="Information"><img src="resources/images/icons/information.svg" alt="Project Information" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Edit"><img src="resources/images/icons/settings.svg" alt="Edit Project" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Delete"><img src="resources/images/icons/delete.svg" alt="Delete Project" width="10" height="10"></button><br>
+                    </div>
+                </div>
+                <div class="inactive-project">
+                    <h2 class="inactive-project-title">Project name 3</h2>
+                    <p class="inactive-project-subtitle">www.myproject.com</p>
+                    <div class="inactive-project-controls">
+                        <button class="project-btns" aria-label="Information"><img src="resources/images/icons/information.svg" alt="Project Information" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Edit"><img src="resources/images/icons/settings.svg" alt="Edit Project" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Delete"><img src="resources/images/icons/delete.svg" alt="Delete Project" width="10" height="10"></button><br>
+                    </div>
+                </div>
+                <div class="inactive-project">
+                    <h2 class="inactive-project-title">Project name 4</h2>
+                    <p class="inactive-project-subtitle">www.myproject.com</p>
+                    <div class="inactive-project-controls">
+                        <button class="project-btns" aria-label="Information"><img src="resources/images/icons/information.svg" alt="Project Information" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Edit"><img src="resources/images/icons/settings.svg" alt="Edit Project" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Delete"><img src="resources/images/icons/delete.svg" alt="Delete Project" width="10" height="10"></button><br>
+                    </div>
+                </div>
+                <div class="inactive-project">
+                    <h2 class="inactive-project-title">Project name 5</h2>
+                    <p class="inactive-project-subtitle">www.myproject.com</p>
+                    <div class="inactive-project-controls">
+                        <button class="project-btns" aria-label="Information"><img src="resources/images/icons/information.svg" alt="Project Information" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Edit"><img src="resources/images/icons/settings.svg" alt="Edit Project" width="10" height="10"></button><br>
+                        <button class="project-btns" aria-label="Delete"><img src="resources/images/icons/delete.svg" alt="Delete Project" width="10" height="10"></button><br>
+                    </div>
+                </div>
+                <section id="sbr-controls">
+                    <button class="control-btns" aria-label="New Project"><img src="resources/images/icons/new.svg" alt="New Project" width="10" height="10"> New Project</button>
+                    <button class="control-btns" aria-label="Settings"><img src="resources/images/icons/settings.svg" alt="Settings" width="10" height="10"> Settings</button>
+                </section>
+            </section>
+        </aside>
+        <section class="main-container">
+
+                <div class="editor-container editor-container_classic-editor editor-container_include-fullscreen" id="editor-container">
+                    <div class="editor-container__editor"><div id="editor"></div></div>
+                </div>
+        </section>
+            <script src="https://cdn.ckeditor.com/ckeditor5/46.0.0/ckeditor5.umd.js" crossorigin></script>
+            <script src="main.js"></script>
     </main>
 
-    <footer>
-        <!--
-        Here goes a status bar
-
-        System status light
-        -->
-    </footer>
+    <div id="footer"></div>
 </body>
 </html>
