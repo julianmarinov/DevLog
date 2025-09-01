@@ -119,15 +119,15 @@ a {
 
 #sidebar {
     display: box;
-    width: 350px;
+    width: 300px;
     justify-content: space-between;
 }
 
 #sidebar > * {
-    border-radius: 5px;
+    /* border-radius: 5px;
     background-color: rgb(192 192 192 / 0.2);
     padding: 1em;
-    border: 1px solid rgb(00 00 00);
+    border: 1px solid rgb(00 00 00); */
 }
 
 .active-project {
@@ -140,7 +140,7 @@ a {
 
 .inactive-project {
     border-radius: 5px;
-    background-color: rgb(192 192 192 / 0.2);
+    background-color: rgb(00 00 00 / 0.04);
     padding: 1em;
     border: 1px solid rgb(00 00 00);
     margin-top: 10px;
@@ -148,7 +148,7 @@ a {
 }
 
 .inactive-project:hover {
-    background-color: #f1f1f1;
+    background-color: rgb(255 255 255 / 1);
     box-shadow: 1px 1px;
     transition: all 0.3s ease-out;
 }
@@ -166,15 +166,17 @@ a {
 }
 
 #project-content {
-    margin-left: 20px;
-    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 100%;
+    /* padding: 10px;
+
     border: 1px solid rgb(00 00 00);
-    border-radius: 5px;
+    border-radius: 5px; */
 }
 
 .project-btns {
-    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .control-btns {
@@ -216,4 +218,4 @@ a {
     width: 100%;
     border: 1px solid rgb(00 00 00);
     border-radius: 5px;
-}
+}style.css
